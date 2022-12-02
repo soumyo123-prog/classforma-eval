@@ -1,0 +1,19 @@
+.landing_page_header {
+  padding: 30px;
+}
+
+.landing_page_heading {
+  padding: 0 15px 0 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.document_links_container {
+  padding: 0 60px 0 60px;
+  font-size: 1.5rem;
+}
+
+.document_link_container {
+  margin-bottom: 10px;
+}

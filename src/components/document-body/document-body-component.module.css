@@ -1,0 +1,16 @@
+.document_body_container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.document_body_canvas_container {
+  margin-left: auto;
+  overflow: hidden;
+}
+
+.select_annotation_type {
+  cursor: pointer;
+  padding: 10px;
+}
