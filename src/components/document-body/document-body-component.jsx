@@ -1,6 +1,5 @@
 import { React, useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getDocument } from 'pdfjs-dist';
 
 import { fetchDocumentService } from '../../services/fetch-document-service';
 import { base64ToArrayBuffer } from '../../services/base64-to-buffer';
@@ -24,6 +23,7 @@ const DocumentBodyComponent = () => {
   }, []);
 
   useEffect(() => {
+    const pdfjsLib = window.pdfjsLib;
     // This was not handled with useState because then we would have to add the
     // variable choosen to the list of dependencies of this useEffect function
     // and it was causing errors due to use of promises.
@@ -38,7 +38,7 @@ const DocumentBodyComponent = () => {
     });
 
     if (contentBuffer) {
-      getDocument(contentBuffer).promise.then((pdf) => {
+      pdfjsLib.getDocument(contentBuffer).promise.then((pdf) => {
         if (pageNum > pdf.numPages) {
           alert('Page number ' + pageNum + ' does not exist.');
         } else {
